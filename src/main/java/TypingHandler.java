@@ -1,4 +1,7 @@
+import com.sun.tools.javac.Main;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import javax.swing.*;
 import java.awt.Robot;
@@ -12,14 +15,14 @@ public class TypingHandler {
         String old = "";
         int qt = 8;
         // digitar até  o certificado ou o texto do certificado aparecer na tela
-        while (qt != 0) {
+        while (driver.getCurrentUrl().equals(TypingTestAutomation.TARGET_URL)) {
             Thread.sleep(10000);
             if (qt != 8) {
                 System.out.println("-------");
                 System.out.println("old");
-                System.out.println(old.replace("\r\n",""));
+                System.out.println(old.replace("\r\n", ""));
                 text = PageInteraction.getTextContent(driver);
-                text = text.replace(old,"");
+                text = text.replace(old, "");
                 System.out.println("New Text");
                 System.out.println(text);
             }

@@ -23,10 +23,11 @@ public class PageInteraction {
     public static void closeTooltipLanguage(WebDriver webDriver) {
         try {
 
+
             var wait = new WebDriverWait(webDriver, 5);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div/div/button")));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div/button")));
             WebElement tooltipLanguage =
-                    webDriver.findElement(By.xpath("/html/body/div[3]/div/div/button"));
+                    webDriver.findElement(By.xpath("/html/body/div[2]/div/div/button"));
 
             if (tooltipLanguage != null) {
                 Thread.sleep(1000);
